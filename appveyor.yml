@@ -2,15 +2,18 @@ version: 1.0.{build}
 image: Visual Studio 2017
 configuration: Release
 
+services:
+  mysql:
+
 before_build:
-  - cmd: "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\sn.exe" -Vr *,c5687fc88969c44d
-  - cmd: dotnet restore
+  # cmd: "c:\PROGRA~1\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\sn.exe" -Vr *,c5687fc88969c44d
+  # cmd: dotnet restore
 
 build:
   verbosity: minimal
 
-test_script:
-  cmd: dotnet test Hangfire.MySql.Tests/Hangfire.MySql.Tests.csproj
+# test_script:
+  #cmd: dotnet test Hangfire.MySql.Tests/Hangfire.MySql.Tests.csproj
 
 after_build:
   cmd: dotnet pack Hangfire.MySql/Hangfire.MySql.csproj --configuration Release
