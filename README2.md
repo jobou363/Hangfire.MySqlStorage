@@ -75,7 +75,4 @@ In order to run unit tests and integrational tests set the following variables i
 
 `Hangfire_SqlServer_DatabaseName` (default: `Hangfire.MySql.Tests`)
 
-sn -Vr *,c5687fc88969c44d
 
-CREATE USER 'unittest'@'localhost' IDENTIFIED BY 'unittest';
-GRANT ALL PRIVILEGES ON * . * TO 'unittest'@'localhost';

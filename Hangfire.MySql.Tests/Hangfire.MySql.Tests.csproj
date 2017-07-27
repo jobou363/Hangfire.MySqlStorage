@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net451</TargetFramework>
+    <TargetFramework>net452</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Hangfire.Core" Version="1.6.14" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
-    <PackageReference Include="Moq" Version="4.5.28" />
+    <PackageReference Include="Moq" Version="4.7.99" />
+    <PackageReference Include="MySql.Data" Version="8.0.8-dmr" />    
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="xunit" Version="2.2.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
-    <PackageReference Include="Dapper" Version="1.50.2" />
-    <PackageReference Include="Hangfire.Core" Version="1.6.10" />
+    <PackageReference Include="xunit" Version="2.3.0-beta3-build3705" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.3.0-beta3-build3705" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Transactions" />
@@ -20,5 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hangfire.MySql\Hangfire.MySql.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
   </ItemGroup>
 </Project>
