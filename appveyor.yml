@@ -3,8 +3,9 @@ image: Visual Studio 2017
 configuration: Release
 
 before_build:
-  cmd: "C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\sn.exe" -Vr *,c5687fc88969c44d
-  cmd: dotnet restore
+  cmd: 
+	"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\sn.exe" -Vr *,c5687fc88969c44d
+	dotnet restore
 
 build:
   verbosity: minimal
