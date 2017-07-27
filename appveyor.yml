@@ -3,16 +3,16 @@ image: Visual Studio 2017
 configuration: Release
 
 before_build:
-  - cmd: dotnet restore
+  cmd: dotnet restore
 
 build:
-  - verbosity: minimal
+  verbosity: minimal
 
 test_script:
-  - cmd: dotnet test Hangfire.MySql.Tests/Hangfire.MySql.Tests.csproj
+  cmd: dotnet test Hangfire.MySql.Tests/Hangfire.MySql.Tests.csproj
 
 after_build:
-  - cmd: dotnet pack Hangfire.MySql/Hangfire.MySql.csproj --configuration Release
+  cmd: dotnet pack Hangfire.MySql/Hangfire.MySql.csproj --configuration Release
 
 artifacts:
-  - path: '**/*.nupkg'
+  path: '**/*.nupkg'
