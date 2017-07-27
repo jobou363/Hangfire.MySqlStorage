@@ -2,8 +2,8 @@ version: 1.0.{build}
 image: Visual Studio 2017
 configuration: Release
 
-services:
-  mysql:
+# services:
+#  mysql:
 
 before_build:
   # cmd: "c:\PROGRA~1\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\sn.exe" -Vr *,c5687fc88969c44d
