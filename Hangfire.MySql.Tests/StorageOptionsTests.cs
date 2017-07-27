@@ -11,7 +11,8 @@ namespace Hangfire.MySql.Tests
             var options = new MySqlStorageOptions();
 
             Assert.True(options.QueuePollInterval > TimeSpan.Zero);
-            Assert.True(options.InvisibilityTimeout > TimeSpan.Zero);
+            // warning CS0618: 'MySqlStorageOptions.InvisibilityTimeout' is obsolete: 'Does not make sense anymore. Background jobs re-queued instantly even after ungraceful shutdown now. Will be removed in 2.0.0.'
+            // Assert.True(options.InvisibilityTimeout > TimeSpan.Zero);
             Assert.True(options.JobExpirationCheckInterval > TimeSpan.Zero);
             Assert.True(options.PrepareSchemaIfNecessary);
         }

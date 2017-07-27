@@ -6,13 +6,11 @@ namespace Hangfire.MySql.Tests
     public static class ConnectionUtils
     {
         private const string DatabaseVariable = "Hangfire_SqlServer_DatabaseName";
-        private const string ConnectionStringTemplateVariable 
-            = "Hangfire_SqlServer_ConnectionStringTemplate";
+        private const string ConnectionStringTemplateVariable = "Hangfire_SqlServer_ConnectionStringTemplate";
 
         private const string MasterDatabaseName = "mysql";
         private const string DefaultDatabaseName = @"Hangfire.MySql.Tests";
-        private const string DefaultConnectionStringTemplate
-            = "server=127.0.0.1;uid=unittest;pwd=unittest;database={0};Allow User Variables=True;SslMode=none";
+        private const string DefaultConnectionStringTemplate = "server=127.0.0.1;uid=unittest;pwd=unittest;database={0};Allow User Variables=True;SslMode=none";
 
         public static string GetDatabaseName()
         {

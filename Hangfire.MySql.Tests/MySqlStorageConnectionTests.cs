@@ -136,8 +136,8 @@ namespace Hangfire.MySql.Tests
                 var sqlJob = sql.Query("select * from Job").Single();
                 Assert.Equal(jobId, sqlJob.Id.ToString());
                 Assert.Equal(createdAt, sqlJob.CreatedAt);
-                Assert.Equal(null, (int?)sqlJob.StateId);
-                Assert.Equal(null, (string)sqlJob.StateName);
+                Assert.Null((int?)sqlJob.StateId);
+                Assert.Null((string)sqlJob.StateName);
 
                 var invocationData = JobHelper.FromJson<InvocationData>((string)sqlJob.InvocationData);
                 invocationData.Arguments = sqlJob.Arguments;
@@ -145,7 +145,7 @@ namespace Hangfire.MySql.Tests
                 var job = invocationData.Deserialize();
                 Assert.Equal(typeof(MySqlStorageConnectionTests), job.Type);
                 Assert.Equal("SampleMethod", job.Method.Name);
-                Assert.Equal("\"Hello\"", job.Arguments[0]);
+                Assert.Equal("\"Hello\"", job.Args[0]);
 
                 Assert.True(createdAt.AddDays(1).AddMinutes(-1) < sqlJob.ExpireAt);
                 Assert.True(sqlJob.ExpireAt < createdAt.AddDays(1).AddMinutes(1));
