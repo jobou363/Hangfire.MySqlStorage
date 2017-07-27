@@ -7,7 +7,7 @@ configuration: Release
 
 before_build:
   # cmd: "c:\PROGRA~1\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6 Tools\sn.exe" -Vr *,c5687fc88969c44d
-  # cmd: dotnet restore
+  cmd: dotnet restore
 
 build:
   verbosity: minimal
